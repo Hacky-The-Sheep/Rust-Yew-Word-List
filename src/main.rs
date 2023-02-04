@@ -8,7 +8,24 @@ enum Move {
 struct WordComponent {
     word: String,
     pointer: usize,
-    list: Vec<&'static str>,
+    list: Vec<String>,
+}
+
+fn make_list() -> Vec<String> {
+    let word_list: Vec<String> = vec![
+        "FIRST".to_string(),
+        "Hello".to_string(),
+        "Goodbye".to_string(),
+        "Whatever".to_string(),
+        "nothing".to_string(),
+        "HUUUUUUUUGE LIST".to_string(),
+        "This".to_string(),
+        "Is".to_string(),
+        "A".to_string(),
+        "Test".to_string(),
+        "LAST WORD".to_string(),
+    ];
+    word_list
 }
 
 impl Component for WordComponent {
@@ -19,19 +36,7 @@ impl Component for WordComponent {
         Self {
             word: "FIRST".to_string(),
             pointer: 0,
-            list: vec![
-                "FIRST",
-                "Hello",
-                "Goodbye",
-                "Whatever",
-                "nothing",
-                "HUUUUUUUUGE LIST",
-                "This",
-                "Is",
-                "A",
-                "Test",
-                "LAST WORD",
-            ],
+            list: make_list(),
         }
     }
 
